@@ -23,7 +23,89 @@
 
         <main class="content-wrapper">
             <h2 class="page-title">Certifications</h2>
-            <!-- Add your certifications content here -->
+            <!-- Certifications content -->
+            
+        <style>
+            .zoom-trigger { display: none; }
+
+            .cert-img {
+                transition: transform 0.3s ease;
+                cursor: zoom-in;
+                border-radius: 4px;
+                display: block;
+            }
+
+            .zoom-trigger:checked + label .cert-img {
+                transform: scale(1.3); 
+                position: relative;
+                z-index: 100;
+                cursor: zoom-out;
+            }
+
+            .cert-list {
+                display: flex; 
+                flex-direction: row;
+                flex-wrap: nowrap;
+                list-style: none; 
+                padding: 40px 0;
+                gap: 30px; 
+                justify-content: center;
+                overflow-x: visible;
+            }
+
+            .cert-item {
+                display: flex; 
+                flex-direction: column; 
+                align-items: center;
+                flex-shrink: 0;
+            }
+
+            @media (max-width: 768px) {
+                .cert-list {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 50px; 
+                }
+                
+                .zoom-trigger:checked + label .cert-img {
+                    transform: scale(1.1);
+                }
+            }
+
+            .cert-item a {
+                margin-top: 10px;
+                text-decoration: none;
+                color: #000000;
+                font-family: sans-serif;
+            }
+        </style>
+
+        <ul class="cert-list">
+            <li class="cert-item">
+                <input type="checkbox" id="zoom-word" class="zoom-trigger">
+                <label for="zoom-word">
+                    <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/word-certificate.png?raw=true" width="360" height="300" class="cert-img">
+                </label>
+                <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Microsoft Word</a>
+            </li>
+
+            <li class="cert-item">
+                <input type="checkbox" id="zoom-pp" class="zoom-trigger">
+                <label for="zoom-pp">
+                    <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/powerpoint-certificate.png?raw=true" width="360" height="300" class="cert-img">
+                </label>
+                <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Microsoft Powerpoint</a>
+            </li>
+
+            <li class="cert-item">
+                <input type="checkbox" id="zoom-db" class="zoom-trigger">
+                <label for="zoom-db">
+                    <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/databases-certificate.png?raw=true" width="360" height="300" class="cert-img">
+                </label>
+                <a href=https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Databases</a>
+            </li>
+        </ul>
+
         </main>
 
         <div class="purple-bar footer-bar"></div>
