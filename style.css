@@ -299,7 +299,15 @@ body {
     }
 
     .hero-buttons {
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        width: 100%;
+    }
+
+    .hero-btn {
+        width: 100%;
+        text-align: center;
     }
 
     .hero-text .name-title {
