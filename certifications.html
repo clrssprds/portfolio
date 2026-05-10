@@ -22,89 +22,137 @@
         </nav>
 
         <main class="content-wrapper">
-            <h2 class="page-title">Certifications</h2>
-            <!-- Certifications content -->
-            
-        <style>
-            .zoom-trigger { display: none; }
+            <h2 class="page-title">Here are my earned certifications:</h2>
 
-            .cert-img {
-                transition: transform 0.3s ease;
-                cursor: zoom-in;
-                border-radius: 4px;
-                display: block;
-            }
-
-            .zoom-trigger:checked + label .cert-img {
-                transform: scale(1.3); 
-                position: relative;
-                z-index: 100;
-                cursor: zoom-out;
-            }
-
-            .cert-list {
-                display: flex; 
-                flex-direction: row;
-                flex-wrap: nowrap;
-                list-style: none; 
-                padding: 40px 0;
-                gap: 30px; 
-                justify-content: center;
-                overflow-x: visible;
-            }
-
-            .cert-item {
-                display: flex; 
-                flex-direction: column; 
-                align-items: center;
-                flex-shrink: 0;
-            }
-
-            @media (max-width: 768px) {
+            <style>
                 .cert-list {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    list-style: none;
+                    padding: 40px 0;
+                    gap: 30px;
+                    justify-content: center;
+                    width: 100%;
+                }
+
+                .cert-item {
+                    display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 50px; 
+                    flex: 1;
+                    max-width: 360px;
                 }
-                
-                .zoom-trigger:checked + label .cert-img {
-                    transform: scale(1.1);
+
+                .cert-img {
+                    border-radius: 4px;
+                    display: block;
+                    cursor: zoom-in;
+                    transition: box-shadow 0.2s;
+                    width: 100%;
+                    height: auto;
+                    max-width: 360px;
                 }
-            }
 
-            .cert-item a {
-                margin-top: 10px;
-                text-decoration: none;
-                color: #000000;
-                font-family: sans-serif;
-            }
-        </style>
+                .cert-img:hover {
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+                }
 
-        <ul class="cert-list">
-            <li class="cert-item">
-                <input type="checkbox" id="zoom-word" class="zoom-trigger">
-                <label for="zoom-word">
-                    <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/word-certificate.png?raw=true" width="360" height="300" class="cert-img">
-                </label>
-                <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Microsoft Word</a>
-            </li>
+                .cert-item a {
+                    margin-top: 10px;
+                    text-decoration: none;
+                    color: #000000;
+                    font-family: sans-serif;
+                    text-align: center;
+                }
 
-            <li class="cert-item">
-                <input type="checkbox" id="zoom-pp" class="zoom-trigger">
-                <label for="zoom-pp">
-                    <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/powerpoint-certificate.png?raw=true" width="360" height="300" class="cert-img">
-                </label>
-                <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Microsoft Powerpoint</a>
-            </li>
+                /* Lightbox overlay */
+                .lightbox-overlay {
+                    display: none;
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.85);
+                    z-index: 9999;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: zoom-out;
+                }
 
-            <li class="cert-item">
-                <input type="checkbox" id="zoom-db" class="zoom-trigger">
-                <label for="zoom-db">
-                    <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/databases-certificate.png?raw=true" width="360" height="300" class="cert-img">
-                </label>
-                <a href=https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Databases</a>
-            </li>
-        </ul>
+                .lightbox-overlay.active {
+                    display: flex;
+                }
+
+                .lightbox-overlay img {
+                    max-width: 90vw;
+                    max-height: 90vh;
+                    border-radius: 8px;
+                    object-fit: contain;
+                    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+                }
+
+                @media (max-width: 768px) {
+                    .cert-list {
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 40px;
+                        padding: 20px 0;
+                    }
+
+                    .cert-item {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+
+                    .cert-img {
+                        max-width: 100%;
+                    }
+                }
+            </style>
+
+            <!-- Lightbox -->
+            <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+                <img id="lightbox-img" src="" alt="Certificate">
+            </div>
+
+            <ul class="cert-list">
+                <li class="cert-item">
+                    <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/word-certificate.png?raw=true"
+                         class="cert-img"
+                         onclick="openLightbox(this)" alt="Microsoft Office Specialist - Word Associate">
+                    <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Microsoft Office Specialist - Word Associate</a>
+                </li>
+
+                <li class="cert-item">
+                    <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/powerpoint-certificate.png?raw=true"
+                         class="cert-img"
+                         onclick="openLightbox(this)" alt="Microsoft Office Specialist - PowerPoint Associate">
+                    <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Microsoft Office Specialist - PowerPoint Associate</a>
+                </li>
+
+                <li class="cert-item">
+                    <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/databases-certificate.png?raw=true"
+                         class="cert-img"
+                         onclick="openLightbox(this)" alt="Information Technology Specialist - Databases">
+                    <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Information Technology Specialist - Databases</a>
+                </li>
+            </ul>
+
+            <script>
+                function openLightbox(img) {
+                    document.getElementById('lightbox-img').src = img.src;
+                    document.getElementById('lightbox').classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeLightbox() {
+                    document.getElementById('lightbox').classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') closeLightbox();
+                });
+            </script>
 
         </main>
 

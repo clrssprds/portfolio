@@ -89,7 +89,8 @@ body {
     font-weight: 700;
     margin-bottom: 25px;
     color: var(--text-color);
-    align-self: flex-start;
+    align-self: center;
+    text-align: center;
 }
 
 
