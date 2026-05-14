@@ -21,66 +21,11 @@
             <a href="contact.html" class="nav-button">Contact</a>
         </nav>
 
-        <style>
-            .techstack-list,
-            .devtools-list {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                list-style: none;
-                padding: 20px 0 40px;
-                gap: 30px;
-                justify-content: center;
-                width: 100%;
-            }
-
-            .techstack-list li,
-            .devtools-list li {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .techstack-list li p,
-            .devtools-list li p {
-                text-align: center;
-                font-family: 'Outfit', sans-serif;
-                font-style: italic;
-                font-weight: 300;
-                color: #000000;
-                font-size: 0.95rem;
-            }
-
-            .techstack-list img,
-            .devtools-list img {
-                width: 120px;
-                height: 120px;
-                object-fit: contain;
-                display: block;
-            }
-
-            @media (max-width: 768px) {
-                .techstack-list img,
-                .devtools-list img {
-                    width: 80px;
-                    height: 80px;
-                }
-
-                .techstack-list,
-                .devtools-list {
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 30px;
-                }
-            }
-        </style>
-
         <!-- Programming Languages -->
-        <main class="content-wrapper">
+        <main class="content-wrapper tech-wrapper">
             <h2 class="page-title">Programming Languages</h2>
 
-            <ul class="techstack-list">
+            <ul class="tech-grid">
                 <li>
                     <img src="https://raw.githubusercontent.com/clrssprds/portfolio/b018a14ccd238bf701f75bf28bed7896d90f614a/logos/c-icon.svg" alt="C Programming">
                     <p>C Programming</p>
@@ -109,10 +54,10 @@
         </main>
 
         <!-- Development Tools -->
-        <main class="content-wrapper">
+        <main class="content-wrapper tech-wrapper">
             <h2 class="page-title">Development Tools</h2>
 
-            <ul class="devtools-list">
+            <ul class="tech-grid">
                 <li>
                     <img src="https://github.com/clrssprds/portfolio/blob/master/logos/androidstudio-icon.png?raw=true" alt="Android Studio">
                     <p>Android Studio</p>
@@ -135,4 +80,4 @@
         <div class="purple-bar footer-bar"></div>
 
     </body>
-</html> 
+</html>
