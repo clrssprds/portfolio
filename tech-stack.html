@@ -7,77 +7,88 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
-        <div class="purple-bar"></div>
+        <div class="top-bar has-nav">
+            <nav class="top-nav">
+                <a href="index.html"          class="top-nav-item">Home</a>
+                <a href="about.html"          class="top-nav-item">About</a>
+                <a href="tech-stack.html"     class="top-nav-item active">Tech Stack</a>
+                <a href="certifications.html" class="top-nav-item">Certifications</a>
+                <a href="contact.html"        class="top-nav-item">Contact</a>
+            </nav>
+            <button class="hamburger" id="navBurger" aria-label="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
 
-        <nav class="nav-container">
-            <a href="index.html" class="nav-button">Home</a>
-            <a href="about.html" class="nav-button">About</a>
-            <a href="tech-stack.html" class="nav-button active">Tech Stack</a>
-            <a href="certifications.html" class="nav-button">Certifications</a>
-            <a href="contact.html" class="nav-button">Contact</a>
-        </nav>
+        <div class="mobile-dropdown" id="mobileDropdown">
+            <a href="index.html"          class="mobile-nav-item">Home</a>
+            <a href="about.html"          class="mobile-nav-item">About</a>
+            <a href="tech-stack.html"     class="mobile-nav-item active">Tech Stack</a>
+            <a href="certifications.html" class="mobile-nav-item">Certifications</a>
+            <a href="contact.html"        class="mobile-nav-item">Contact</a>
+        </div>
 
-        <!-- Programming Languages -->
         <main class="content-wrapper tech-wrapper">
             <h2 class="page-title">Programming Languages</h2>
-
-            <ul class="tech-grid">
-                <li>
-                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/b018a14ccd238bf701f75bf28bed7896d90f614a/logos/c-icon.svg" alt="C Programming">
-                    <p>C Programming</p>
+            <ul class="tech-grid-bulma">
+                <li class="tech-item">
+                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/b018a14ccd238bf701f75bf28bed7896d90f614a/logos/c-icon.svg" alt="C Programming" class="tech-icon">
+                    <p class="tech-label">C Programming</p>
                 </li>
-                <li>
-                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/b018a14ccd238bf701f75bf28bed7896d90f614a/logos/java-icon.svg" alt="Java">
-                    <p>Java</p>
+                <li class="tech-item">
+                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/b018a14ccd238bf701f75bf28bed7896d90f614a/logos/java-icon.svg" alt="Java" class="tech-icon">
+                    <p class="tech-label">Java</p>
                 </li>
-                <li>
-                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/09e74c535edd0a1774df0e4a9f567d961c9e411a/logos/mysql-icon.svg" alt="MySQL">
-                    <p>MySQL</p>
+                <li class="tech-item">
+                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/09e74c535edd0a1774df0e4a9f567d961c9e411a/logos/mysql-icon.svg" alt="MySQL" class="tech-icon">
+                    <p class="tech-label">MySQL</p>
                 </li>
-                <li>
-                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/html-icon.svg" alt="HTML">
-                    <p>HTML</p>
+                <li class="tech-item">
+                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/html-icon.svg" alt="HTML" class="tech-icon">
+                    <p class="tech-label">HTML</p>
                 </li>
-                <li>
-                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/css-icon.svg" alt="CSS">
-                    <p>CSS</p>
+                <li class="tech-item">
+                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/css-icon.svg" alt="CSS" class="tech-icon">
+                    <p class="tech-label">CSS</p>
                 </li>
-                <li>
-                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/js-icon.svg" alt="Javascript">
-                    <p>Javascript</p>
+                <li class="tech-item">
+                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/js-icon.svg" alt="Javascript" class="tech-icon">
+                    <p class="tech-label">Javascript</p>
                 </li>
             </ul>
         </main>
 
-        <!-- Development Tools -->
         <main class="content-wrapper tech-wrapper">
             <h2 class="page-title">Development Tools</h2>
-
-            <ul class="tech-grid">
-                <li>
-                    <img src="https://github.com/clrssprds/portfolio/blob/master/logos/androidstudio-icon.png?raw=true" alt="Android Studio">
-                    <p>Android Studio</p>
+            <ul class="tech-grid-bulma">
+                <li class="tech-item">
+                    <img src="https://github.com/clrssprds/portfolio/blob/master/logos/androidstudio-icon.png?raw=true" alt="Android Studio" class="tech-icon">
+                    <p class="tech-label">Android Studio</p>
                 </li>
-                <li>
-                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/git-icon.svg" alt="Git">
-                    <p>Git</p>
+                <li class="tech-item">
+                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/git-icon.svg" alt="Git" class="tech-icon">
+                    <p class="tech-label">Git</p>
                 </li>
-                <li>
-                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/github-icon.svg" alt="Github">
-                    <p>Github</p>
+                <li class="tech-item">
+                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/c2dd8394a279f5945c44982f7f8eefb3e3aa9e99/logos/github-icon.svg" alt="Github" class="tech-icon">
+                    <p class="tech-label">Github</p>
                 </li>
-                <li>
-                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/06c84a321333055644340a74bb49549e06b9483c/logos/vscode-icon.svg" alt="VS Code">
-                    <p>VS Code</p>
+                <li class="tech-item">
+                    <img src="https://raw.githubusercontent.com/clrssprds/portfolio/06c84a321333055644340a74bb49549e06b9483c/logos/vscode-icon.svg" alt="VS Code" class="tech-icon">
+                    <p class="tech-label">VS Code</p>
                 </li>
             </ul>
         </main>
 
-        <div class="purple-bar footer-bar"></div>
+        <div class="bottom-bar"></div>
 
+        <script src="script.js"></script>
     </body>
 </html>

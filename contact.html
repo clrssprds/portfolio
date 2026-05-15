@@ -7,41 +7,50 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
-        <div class="purple-bar"></div>
+        <div class="top-bar has-nav">
+            <nav class="top-nav">
+                <a href="index.html"          class="top-nav-item">Home</a>
+                <a href="about.html"          class="top-nav-item">About</a>
+                <a href="tech-stack.html"     class="top-nav-item">Tech Stack</a>
+                <a href="certifications.html" class="top-nav-item">Certifications</a>
+                <a href="contact.html"        class="top-nav-item active">Contact</a>
+            </nav>
+            <button class="hamburger" id="navBurger" aria-label="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
 
-        <nav class="nav-container">
-            <a href="index.html" class="nav-button">Home</a>
-            <a href="about.html" class="nav-button">About</a>
-            <a href="tech-stack.html" class="nav-button">Tech Stack</a>
-            <a href="certifications.html" class="nav-button">Certifications</a>
-            <a href="contact.html" class="nav-button active">Contact</a>
-        </nav>
+        <div class="mobile-dropdown" id="mobileDropdown">
+            <a href="index.html"          class="mobile-nav-item">Home</a>
+            <a href="about.html"          class="mobile-nav-item">About</a>
+            <a href="tech-stack.html"     class="mobile-nav-item">Tech Stack</a>
+            <a href="certifications.html" class="mobile-nav-item">Certifications</a>
+            <a href="contact.html"        class="mobile-nav-item active">Contact</a>
+        </div>
 
         <main class="content-wrapper contact-page">
             <div class="contact-wrapper">
-                <p class="contact-heading">You may contact me on the following:</p>
-
+                <p class="contact-heading">Connect with Me</p>
                 <div class="contact-links">
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/clarisse-paredes/" target="_blank" class="contact-item">
-                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="contact-icon">
-                        <span>Clarisse Paredes</span>
+                    <a href="https://www.linkedin.com/in/clarisse-paredes/" target="_blank" rel="noopener" class="contact-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
                     </a>
-
-                    <!-- GitHub -->
-                    <a href="https://github.com/clrssprds" target="_blank" class="contact-item">
-                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="contact-icon github-icon">
-                        <span>@clrssprds</span>
+                    <a href="https://github.com/clrssprds" target="_blank" rel="noopener" class="contact-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="github-icon">
                     </a>
                 </div>
             </div>
         </main>
 
-        <div class="purple-bar footer-bar"></div>
+        <div class="bottom-bar"></div>
 
+        <script src="script.js"></script>
     </body>
 </html>

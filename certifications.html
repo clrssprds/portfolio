@@ -7,159 +7,71 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
-        <div class="purple-bar"></div>
+        <div class="top-bar has-nav">
+            <nav class="top-nav">
+                <a href="index.html"          class="top-nav-item">Home</a>
+                <a href="about.html"          class="top-nav-item">About</a>
+                <a href="tech-stack.html"     class="top-nav-item">Tech Stack</a>
+                <a href="certifications.html" class="top-nav-item active">Certifications</a>
+                <a href="contact.html"        class="top-nav-item">Contact</a>
+            </nav>
+            <button class="hamburger" id="navBurger" aria-label="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
 
-        <nav class="nav-container">
-            <a href="index.html" class="nav-button">Home</a>
-            <a href="about.html" class="nav-button">About</a>
-            <a href="tech-stack.html" class="nav-button">Tech Stack</a>
-            <a href="certifications.html" class="nav-button active">Certifications</a>
-            <a href="contact.html" class="nav-button">Contact</a>
-        </nav>
+        <div class="mobile-dropdown" id="mobileDropdown">
+            <a href="index.html"          class="mobile-nav-item">Home</a>
+            <a href="about.html"          class="mobile-nav-item">About</a>
+            <a href="tech-stack.html"     class="mobile-nav-item">Tech Stack</a>
+            <a href="certifications.html" class="mobile-nav-item active">Certifications</a>
+            <a href="contact.html"        class="mobile-nav-item">Contact</a>
+        </div>
 
         <main class="content-wrapper">
             <h2 class="page-title">Certifications</h2>
 
-            <style>
-                .cert-list {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: nowrap;
-                    list-style: none;
-                    padding: 40px 0;
-                    gap: 30px;
-                    justify-content: center;
-                    width: 100%;
-                }
-
-                .cert-item {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    flex: 1;
-                    max-width: 360px;
-                }
-
-                .cert-img {
-                    border-radius: 4px;
-                    display: block;
-                    cursor: zoom-in;
-                    transition: box-shadow 0.2s;
-                    width: 100%;
-                    height: auto;
-                    max-width: 360px;
-                }
-
-                .cert-img:hover {
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-                }
-
-                .cert-item a {
-                    margin-top: 10px;
-                    text-decoration: none;
-                    color: #000000;
-                    font-family: 'Outfit', sans-serif;
-                    font-style: italic;
-                    font-weight: 300;
-                    font-size: 0.95rem;
-                    text-align: center;
-                }
-
-                /* Lightbox overlay */
-                .lightbox-overlay {
-                    display: none;
-                    position: fixed;
-                    inset: 0;
-                    background: rgba(0, 0, 0, 0.85);
-                    z-index: 9999;
-                    justify-content: center;
-                    align-items: center;
-                    cursor: zoom-out;
-                }
-
-                .lightbox-overlay.active {
-                    display: flex;
-                }
-
-                .lightbox-overlay img {
-                    max-width: 90vw;
-                    max-height: 90vh;
-                    border-radius: 8px;
-                    object-fit: contain;
-                    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-                }
-
-                @media (max-width: 768px) {
-                    .cert-list {
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 40px;
-                        padding: 20px 0;
-                    }
-
-                    .cert-item {
-                        width: 100%;
-                        max-width: 100%;
-                    }
-
-                    .cert-img {
-                        max-width: 100%;
-                    }
-                }
-            </style>
-
-            <!-- Lightbox -->
-            <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
-                <img id="lightbox-img" src="" alt="Certificate">
-            </div>
-
             <ul class="cert-list">
                 <li class="cert-item">
                     <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/word-certificate.png?raw=true"
-                         class="cert-img"
-                         onclick="openLightbox(this)" alt="Microsoft Office Specialist - Word Associate">
-                    <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Microsoft Office Specialist - Word Associate</a>
+                         class="cert-img" onclick="openLightbox(this)"
+                         alt="Microsoft Office Specialist - Word Associate">
+                    <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">
+                        Microsoft Office Specialist - Word Associate
+                    </a>
                 </li>
-
                 <li class="cert-item">
                     <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/powerpoint-certificate.png?raw=true"
-                         class="cert-img"
-                         onclick="openLightbox(this)" alt="Microsoft Office Specialist - PowerPoint Associate">
-                    <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Microsoft Office Specialist - PowerPoint Associate</a>
+                         class="cert-img" onclick="openLightbox(this)"
+                         alt="Microsoft Office Specialist - PowerPoint Associate">
+                    <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">
+                        Microsoft Office Specialist - PowerPoint Associate
+                    </a>
                 </li>
-
                 <li class="cert-item">
                     <img src="https://github.com/clrssprds/portfolio/blob/master/certifications/databases-certificate.png?raw=true"
-                         class="cert-img"
-                         onclick="openLightbox(this)" alt="Information Technology Specialist - Databases">
-                    <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">Information Technology Specialist - Databases</a>
+                         class="cert-img" onclick="openLightbox(this)"
+                         alt="Information Technology Specialist - Databases">
+                    <a href="https://www.certiport.com/portal/pages/credentialverification.aspx" target="_blank" rel="noopener">
+                        Information Technology Specialist - Databases
+                    </a>
                 </li>
             </ul>
 
-            <script>
-                function openLightbox(img) {
-                    document.getElementById('lightbox-img').src = img.src;
-                    document.getElementById('lightbox').classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
-
-                function closeLightbox() {
-                    document.getElementById('lightbox').classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape') closeLightbox();
-                });
-            </script>
-
+            <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+                <img id="lightbox-img" src="" alt="Certificate zoomed">
+            </div>
         </main>
 
-        <div class="purple-bar footer-bar"></div>
+        <div class="bottom-bar"></div>
 
+        <script src="script.js"></script>
     </body>
 </html>
