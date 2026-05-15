@@ -17,12 +17,7 @@ body {
     min-height: 100vh;
 }
 
-/*
-   TOP BAR
-   index.html  - no .has-nav - hamburger only (mobile/tablet)
-   other pages - .has-nav - centered links (desktop) + hamburger (mobile/tablet)
- */
-
+/* TOP BAR */
 .top-bar {
     background-color: #b5a1ba;
     height: 55px;
@@ -95,8 +90,7 @@ body {
 .hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .hamburger:hover { background-color: rgba(255,255,255,0.15); }
 
-/* MOBILE DROPDOWN — fixed overlay */
-
+/* MOBILE DROPDOWN */
 .mobile-dropdown {
     display: none;
     position: fixed;
@@ -130,7 +124,6 @@ body {
 .mobile-nav-item.active { background-color: rgba(255,255,255,0.2); font-weight: 600; }
 
 /* BOTTOM BAR */
-
 .bottom-bar {
     background-color: #b5a1ba;
     height: 55px;
@@ -139,15 +132,7 @@ body {
     margin-top: auto;
 }
 
-/* SHOW HAMBURGER / HIDE DESKTOP NAV  (≤1023px) */
-
-@media screen and (max-width: 1023px) {
-    .hamburger { display: flex; }
-    .top-nav   { display: none; }
-}
-
-/* GENERIC LAYOUT - content-wrapper centres its children horizontally */
-
+/* GENERIC LAYOUT */
 .content-wrapper {
     width: 100%;
     max-width: 960px;
@@ -173,7 +158,6 @@ body {
 }
 
 /* INDEX — Hero */
-
 .hero-section {
     display: flex;
     align-items: center;
@@ -220,7 +204,6 @@ body {
     line-height: 1.7;
 }
 
-/* Buttons */
 .hero-buttons {
     display: flex;
     flex-wrap: nowrap;
@@ -249,7 +232,6 @@ body {
 }
 
 /* ABOUT PAGE */
-
 .about-page {
     justify-content: flex-start;
     padding-top: 40px;
@@ -272,6 +254,13 @@ body {
     margin-bottom: 14px;
 }
 
+.about-heading {
+    color: #333;
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+}
+
 .bio-text p {
     font-style: italic;
     font-weight: 300;
@@ -280,44 +269,27 @@ body {
     text-align: justify;
 }
 
-/* TECH STACK PAGE - Two separate <main> blocks, each a tech-wrapper */
+.bio-text p + p { margin-top: 20px; }
 
+/* TECH STACK PAGE */
 .tech-wrapper {
     justify-content: flex-start;
     padding-top: 32px;
     padding-bottom: 0;
 }
 
-.tech-wrapper:last-of-type {
-    padding-bottom: 48px;
-}
+.tech-wrapper:last-of-type { padding-bottom: 48px; }
 
-/*
-  Grid columns:
-    ≤320px  - 2 columns
-    321–768 - 3 columns  (tablet)
-    ≥769    - auto-fit   (desktop, all in one row)
-*/
+/* Tech Grid Logic */
 .tech-grid-bulma {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     list-style: none;
     width: 100%;
     gap: 32px 20px;
     padding: 16px 0;
     justify-items: center;
-}
-
-@media (min-width: 321px) {
-    .tech-grid-bulma {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 769px) {
-    .tech-grid-bulma {
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    }
+    /* Default: Mobile (2 columns) */
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .tech-item {
@@ -335,11 +307,8 @@ body {
     transition: transform 0.25s ease;
 }
 
-/* Hover scale only on real-cursor devices */
 @media (hover: hover) and (pointer: fine) {
-    .tech-item:hover .tech-icon {
-        transform: scale(1.18);
-    }
+    .tech-item:hover .tech-icon { transform: scale(1.18); }
 }
 
 .tech-label {
@@ -350,10 +319,7 @@ body {
 }
 
 /* CONTACT PAGE */
-
-.contact-page {
-    justify-content: center;
-}
+.contact-page { justify-content: center; }
 
 .contact-wrapper {
     display: flex;
@@ -410,10 +376,9 @@ body {
 .contact-card .github-icon { border-radius: 50%; }
 
 /* CERTIFICATIONS PAGE */
-
 .cert-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Default for Desktop: All in one row */
     list-style: none;
     padding: 32px 0;
     gap: 30px;
@@ -425,7 +390,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(50% - 15px);
+    flex: 1; /* Allow to grow/shrink in the single row */
     max-width: 360px;
 }
 
@@ -470,9 +435,7 @@ body {
     align-items: center;
     cursor: zoom-out;
 }
-
 .lightbox-overlay.active { display: flex; }
-
 .lightbox-overlay img {
     max-width: 90vw;
     max-height: 90vh;
@@ -481,54 +444,62 @@ body {
     box-shadow: 0 8px 40px rgba(0,0,0,0.5);
 }
 
-/* RESPONSIVE OVERRIDES */
+/* --- RESPONSIVE BREAKPOINTS --- */
 
-/* Tablet & mobile: hide hero buttons */
-@media (max-width: 1023px) {
-    .hero-buttons { display: none; }
+/* Desktop (Above 1024px) */
+@media screen and (min-width: 1024px) {
+    .tech-grid-bulma {
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); /* Force one row */
+    }
 }
 
-/* Tablet (321–768px) */
-@media (max-width: 768px) {
-    .content-wrapper {
-        padding: 36px 24px;
+/* Tablet (769px to 1023px) */
+@media screen and (max-width: 1023px) {
+    .hamburger { display: flex; }
+    .top-nav   { display: none; }
+    .hero-buttons { display: none; }
+
+    /* Tech Stack: 3 icons per row */
+    .tech-grid-bulma {
+        grid-template-columns: repeat(3, 1fr);
     }
 
+    /* Certifications: 2 per row, centered */
+    .cert-list {
+        flex-wrap: wrap;
+    }
+    .cert-item {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+/* Mobile (Up to 768px) */
+@media screen and (max-width: 768px) {
+    .content-wrapper { padding: 36px 24px; }
     .hero-section {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 28px;
     }
-
     .hero-text      { align-items: center; }
     .hero-subtitle  { text-align: center; }
     .name-title     { font-size: 2rem; }
     .page-title     { font-size: 1.8rem; }
     .section-heading { font-size: 1.4rem; }
 
-    .cert-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 36px;
-        padding: 16px 0;
-    }
-
+    /* Certifications: 1 per row */
     .cert-item {
-        width: 100%;
-        max-width: 100%;
+        flex: 0 0 100%;
+        max-width: 400px;
     }
 }
 
-/* Small mobile (≤320px) */
-@media (max-width: 320px) {
+/* Small Mobile (320px and below) */
+@media (max-width: 380px) {
     .tech-grid-bulma {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .content-wrapper {
-        padding: 28px 16px;
-    }
-
+    .content-wrapper { padding: 28px 16px; }
     .name-title { font-size: 1.7rem; }
 }
