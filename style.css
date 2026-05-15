@@ -62,7 +62,7 @@ body {
     color: #fff;
 }
 
-/* Generic Content Wrapper (ORIGINAL - Para sa Home at Contact) */
+/* Generic Content Wrapper */
 .content-wrapper {
     max-width: 900px;
     margin: auto; 
@@ -86,7 +86,7 @@ body {
     text-align: center;
 }
 
-/* --- TECH STACK GRID STYLES (Specific for tech-stack.html) --- */
+/* --- TECH STACK GRID STYLES --- */
 
 .tech-grid {
     display: flex;
@@ -118,7 +118,7 @@ body {
     font-style: italic;
 }
 
-/* --- HERO SECTION (Para sa Home Page) --- */
+/* --- HERO SECTION --- */
 
 .hero-section {
     display: flex;
@@ -177,10 +177,20 @@ body {
     text-decoration: none;
     color: var(--text-color);
     background-color: var(--purple);
+    border: 2px solid var(--purple);
     border-radius: 50px;
     padding: 10px 26px;
-    font-size: 1rem;
-    transition: background-color 0.2s;
+    font-size: 1.05rem;
+    font-family: 'Outfit', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.hero-btn:hover {
+    background-color: var(--purple-dark);
+    border-color: var(--purple-dark);
+    color: var(--text-color);
 }
 
 /* --- CONTACT PAGE STYLES --- */
@@ -251,9 +261,25 @@ body {
 @media (max-width: 700px) {
     .nav-container { gap: 10px; padding: 15px 20px; }
     .nav-button { padding: 8px 18px; font-size: 0.95rem; }
-    
-    .hero-section { flex-direction: column; text-align: center; gap: 25px; }
-    .hero-buttons { justify-content: center; }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-text {
+        align-items: center;
+    }
+
+    .hero-bio {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
     .hero-text .name-title { font-size: 2rem; }
     .page-title { font-size: 1.8rem; }
 
