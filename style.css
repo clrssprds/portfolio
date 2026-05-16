@@ -495,8 +495,8 @@ body {
     }
 }
 
-/* Small Mobile (320px and below) */
-@media (max-width: 380px) {
+/* Small Mobile (415px and below) */
+@media (max-width: 415px) {
     .tech-grid-bulma {
         grid-template-columns: repeat(2, 1fr);
     }
